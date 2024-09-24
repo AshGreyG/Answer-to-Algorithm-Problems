@@ -6,6 +6,10 @@
 int main() {
     std::string a, b, max_str = "", min_str = "";
     std::cin >> a >> b;
+    if (a == "0" && b == "0") {
+        std::cout << "0";
+        return 0;
+    }
     std::vector<int> output(std::max(a.length(), b.length()) + 2, 0);
     if (a.length() >= b.length()) {
         std::for_each(a.rbegin(), a.rend(), [&] (char ch) { max_str += ch; });
@@ -31,11 +35,6 @@ int main() {
         if (*i != 0) check = true;
         if (check) output_str += std::to_string(*i);
     }
-    if (output_str == "") {
-        std::cout << "0";
-        return 0;
-    } else {
-        std::cout << output_str;
-    }
+    std::cout << output_str;
     return 0;
 }
