@@ -3,8 +3,13 @@
 #include <utility>
 
 
-void rotate(std::vector<std::vector<int>>& vec,
-            int x, int y, int r,int dir) {
+void rotate(
+    std::vector<std::vector<int>>& vec,
+    int x, 
+    int y, 
+    int r, 
+    int dir
+) {
     if (dir == 1) {
         for (int i = 1; i <= 2 * r; ++i) {
             for (int j = i + 1; j <= 2 * r + 1; ++j) {

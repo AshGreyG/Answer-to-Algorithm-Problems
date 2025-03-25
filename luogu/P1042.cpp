@@ -20,8 +20,9 @@ int main() {
     // end input
     
     std::vector<std::pair<unsigned int, unsigned int>> rate_11, rate_21;
-    unsigned int count_11_w = 0, count_11_l = 0,
-                 count_21_w = 0, count_21_l = 0;
+    unsigned int 
+        count_11_w = 0, count_11_l = 0, 
+        count_21_w = 0, count_21_l = 0;
 
     // begin calculate rate
 
@@ -36,15 +37,17 @@ int main() {
             } else if (ch == 'E') {
                 break;
             }
-            if ((count_11_w >= 11 || count_11_l >= 11)
-             && std::abs(static_cast<int>(count_11_w) -  
-                         static_cast<int>(count_11_l)) >= 2) {
+            if (
+                (count_11_w >= 11 || count_11_l >= 11) && 
+                std::abs(static_cast<int>(count_11_w) - static_cast<int>(count_11_l)) >= 2
+            ) {
                 rate_11.emplace_back(count_11_w, count_11_l);
                 count_11_w = count_11_l = 0;
             }
-            if ((count_21_w >= 21 || count_21_l >= 21)
-             && std::abs(static_cast<int>(count_21_w) -
-                         static_cast<int>(count_21_l)) >= 2) {
+            if (
+                (count_21_w >= 21 || count_21_l >= 21) && 
+                std::abs(static_cast<int>(count_21_w) - static_cast<int>(count_21_l)) >= 2
+            ) {
                 rate_21.emplace_back(count_21_w, count_21_l);
                 count_21_w = count_21_l = 0;
             }

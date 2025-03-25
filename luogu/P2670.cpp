@@ -3,9 +3,11 @@
 #include <string>
 #include <utility>
 
-unsigned int calcMineNum(std::vector<std::vector<char>>& area,
-                         unsigned int x,
-                         unsigned int y) {
+unsigned int calcMineNum(
+    std::vector<std::vector<char>>& area,
+    unsigned int x,
+    unsigned int y
+) {
     unsigned int sum = 0;
     std::vector<std::pair<unsigned int, unsigned int>> directions = {
         {1, 1},  {1, 0},  {1, -1},
@@ -15,7 +17,12 @@ unsigned int calcMineNum(std::vector<std::vector<char>>& area,
     for (const auto& dir : directions) {
         unsigned int newX = x + dir.first;
         unsigned int newY = y + dir.second;
-        if (newX >= 1 && newX <= area[0].size() - 1 && newY >= 1 && newY <= area.size() - 1) {
+        if (
+            newX >= 1 && 
+            newX <= area[0].size() - 1 && 
+            newY >= 1 && 
+            newY <= area.size() - 1
+        ) {
             sum += area[newY][newX] == '*' ? 1 : 0;
         }
     }
